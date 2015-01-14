@@ -16,15 +16,15 @@ $(document).ready(function(){
  function showResults(results){
   var html = "";
   $.each(results, function(index,value){
-    html += '<p>' + value.Title + '</p>';
-    console.log(value.Title);
+    html += '<p>' + value.title + '</p>';
+    console.log(value.title);
   });
   $('#search-results').html(html);
  }
  function getRequest(searchTerm){
   var params = {
     part: 'snippet',
-    key: 'AIzaSyCPbOwi4hun85wWoGMaYjwg87sYaJmShUo',
+    key: 'AIzaSyAuDxv_gRQTGrUzC_sA8viplSTbXH6JQX0',
     q: $('#focusedInput').val()
   };
   url = 'https://www.googleapis.com/youtube/v3/search'
@@ -32,5 +32,5 @@ $(document).ready(function(){
   $.getJSON(url, params, function(data){
     showResults(data.Search);
   });
- }
+ } 
 });
