@@ -7,17 +7,11 @@ $(document).ready(function(){
   });
  
 
- function getRequest(searchTerm){
-  $.getJSON('http://www.youtube.com/?s=' + searchTerm + '&r=json', function(data){
-    showResults(data.Search);
-  });
- }
-
  function showResults(results){
   var html = "";
   $.each(results, function(index,value){
-    html += '<p>' + value.title + '</p>';
-    console.log(value.title);
+    html += '<p>' + value.snippet.title + '</p>';
+    console.log(value.snippet.title);
   });
   $('#search-results').html(html);
  }
@@ -30,7 +24,7 @@ $(document).ready(function(){
   url = 'https://www.googleapis.com/youtube/v3/search'
 
   $.getJSON(url, params, function(data){
-    showResults(data.Search);
+    showResults(data.items);
   });
  } 
 });
