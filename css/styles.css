@@ -1,0 +1,16 @@
+#result1 , #result2{
+	display: none;
+}
+
+.display{
+	color: #FFFFFF;
+}
+
+p{
+	font-weight: bold;
+	color: #669999;
+}
+
+body{
+	background-image: url("../images/youtube_pattern.png");
+}
